@@ -1,0 +1,165 @@
+/* 1 */
+
+@keyframes logoAnimation {
+    0% {width: 25px; opacity: 0;}
+    100% {width: 475px; opacity: 1;}
+}
+
+#logo {
+    animation: logoAnimation 5s;
+}
+
+/* 2 */
+body {
+    font-family: "Poppins", "serif";
+    background-image: url("/images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/* 3 */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 4 */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 5 */
+a {
+    color: blue;
+}
+
+/* 6 */
+.card > header
+{
+    background-color: #288088;
+    border: 2px solid #45adad;
+    padding: 20px 0 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+/* 7 */
+.card {
+    border-radius: 50px 50px 0 0; /* 6.5 check */
+    display: flex;
+    flex-direction: column;
+    flex-basis: 450px;
+}
+
+/* 8 */
+.pricing {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+/* 9 */
+.gallery img {
+    border: 10px solid #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* 10 */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+
+    /* 11 */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        flex-direction: row;
+    }
+
+    /* 12 */
+    .pricing {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card {
+        flex-basis: 275px;
+    }
+
+    /* 13 */
+    body > header {
+        position: sticky;
+        top: 0;
+    }
+
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+
+    /* 14 */
+    #logo {
+        animation: none;
+    }
+
+}
+
+@media print and (orientation: portrait) {
+
+    /* not a step but adding because firefox seems to want to run the animation */
+    /* then capture the screen when the logo is still invisible */
+    #logo {
+        animation: none;
+    }
+
+    /* 15, 16 */
+    body {
+        font-family: Arial, Helvetica; /* 15 */
+        background-image: none; /* 16 */
+    }
+
+    /* 17 */
+    nav {
+        width: 100%;
+    }
+    .nav_links {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    /* 18 */
+    .pricing {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+    
+    /* 19 */
+    .card {
+        border: 2px solid #45addd;
+        flex-basis: 325px;
+    }
+
+    /* 20 */
+    .gallery, #gallery {
+        display: none;
+    }
+
+    /* 21 */
+    .card > ul > li:nth-child(2)::after {
+        content: "\1F44D";
+    }
+
+}
+
+
